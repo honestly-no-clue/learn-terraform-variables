@@ -77,7 +77,7 @@ variable "resource_tags" {
   type        = map(string)
   default     = {
     project     = "my-project",
-    environment = "development"
+    environment = "dev"
   }
 validation {
     condition     = length(var.resource_tags["project"]) <= 16 && length(regexall("/[^a-zA-Z0-9-]/", var.resource_tags["project"])) == 0
